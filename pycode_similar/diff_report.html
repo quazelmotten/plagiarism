@@ -1,0 +1,161 @@
+
+            <html>
+            <head>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 20px; }
+                    .container { display: flex; }
+                    .code-block { padding: 10px; border: 1px solid #ddd; white-space: pre-wrap; word-wrap: break-word; width: 50%; }
+                    .code-line { padding: 2px; }
+                </style>
+            </head>
+            <body>
+                <h1>Code Comparison Report</h1>
+                <div class="container">
+                    <div class="code-block">
+                        <h3>Reference Code</h3>
+                        <div class="code-line">import random
+</div><div class="code-line">import string
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#913914FF">def generate_random_string(length=50):
+</div><div class="code-line" style="background-color:#913914FF">    chars = string.ascii_lowercase + string.ascii_uppercase + string.digits
+</div><div class="code-line" style="background-color:#913914FF">    return ''.join(random.choices(chars, k=length))
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#205F4BFF">def calculate_statistics(numbers):
+</div><div class="code-line" style="background-color:#205F4BFF">    total = sum(numbers)
+</div><div class="code-line" style="background-color:#205F4BFF">    count = len(numbers)
+</div><div class="code-line" style="background-color:#205F4BFF">    mean = total / count
+</div><div class="code-line" style="background-color:#205F4BFF">    variance = sum((x - mean) ** 2 for x in numbers) / count
+</div><div class="code-line" style="background-color:#205F4BFF">    return mean, variance
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#F2DD78FF">def process_data(data):
+</div><div class="code-line" style="background-color:#F2DD78FF">    result = []
+</div><div class="code-line" style="background-color:#F2DD78FF">    for item in data:
+</div><div class="code-line" style="background-color:#F2DD78FF">        if isinstance(item, str):
+</div><div class="code-line" style="background-color:#F2DD78FF">            result.append(item.upper())
+</div><div class="code-line" style="background-color:#F2DD78FF">        elif isinstance(item, int):
+</div><div class="code-line" style="background-color:#F2DD78FF">            result.append(item * 2)
+</div><div class="code-line" style="background-color:#F2DD78FF">        else:
+</div><div class="code-line" style="background-color:#F2DD78FF">            result.append(item)
+</div><div class="code-line" style="background-color:#F2DD78FF">    return result
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#755028FF">def search_for_substring(text, substring):
+</div><div class="code-line" style="background-color:#755028FF">    start = 0
+</div><div class="code-line" style="background-color:#755028FF">    while True:
+</div><div class="code-line" style="background-color:#755028FF">        start = text.find(substring, start)
+</div><div class="code-line" style="background-color:#755028FF">        if start == -1:
+</div><div class="code-line" style="background-color:#755028FF">            break
+</div><div class="code-line" style="background-color:#755028FF">        yield start
+</div><div class="code-line" style="background-color:#755028FF">        start += len(substring)
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#D6BB3BFF">def manipulate_lists(list1, list2):
+</div><div class="code-line" style="background-color:#D6BB3BFF">    merged_list = list1 + list2
+</div><div class="code-line" style="background-color:#D6BB3BFF">    merged_list.sort(reverse=True)
+</div><div class="code-line" style="background-color:#D6BB3BFF">    return merged_list
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#BA6E1DFF">def matrix_multiplication(matrix1, matrix2):
+</div><div class="code-line" style="background-color:#BA6E1DFF">    rows1, cols1 = len(matrix1), len(matrix1[0])
+</div><div class="code-line" style="background-color:#BA6E1DFF">    rows2, cols2 = len(matrix2), len(matrix2[0])
+</div><div class="code-line" style="background-color:#BA6E1DFF">    if cols1 != rows2:
+</div><div class="code-line" style="background-color:#BA6E1DFF">        raise ValueError("Incompatible matrices for multiplication")
+</div><div class="code-line" style="background-color:#BA6E1DFF">    
+</div><div class="code-line" style="background-color:#BA6E1DFF">    result = [[0] * cols2 for _ in range(rows1)]
+</div><div class="code-line" style="background-color:#BA6E1DFF">    for i in range(rows1):
+</div><div class="code-line" style="background-color:#BA6E1DFF">        for j in range(cols2):
+</div><div class="code-line" style="background-color:#BA6E1DFF">            for k in range(cols1):
+</div><div class="code-line" style="background-color:#BA6E1DFF">                result[i][j] += matrix1[i][k] * matrix2[k][j]
+</div><div class="code-line" style="background-color:#BA6E1DFF">    return result
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#774762FF">def process_large_data(data):
+</div><div class="code-line" style="background-color:#774762FF">    cleaned_data = []
+</div><div class="code-line" style="background-color:#774762FF">    for record in data:
+</div><div class="code-line" style="background-color:#774762FF">        if record.get('active'):
+</div><div class="code-line" style="background-color:#774762FF">            cleaned_data.append({
+</div><div class="code-line" style="background-color:#774762FF">                'id': record['id'],
+</div><div class="code-line" style="background-color:#774762FF">                'name': record['name'].title(),
+</div><div class="code-line" style="background-color:#774762FF">                'status': 'active'
+</div><div class="code-line" style="background-color:#774762FF">            })
+</div><div class="code-line" style="background-color:#774762FF">        else:
+</div><div class="code-line" style="background-color:#774762FF">            cleaned_data.append({
+</div><div class="code-line" style="background-color:#774762FF">                'id': record['id'],
+</div><div class="code-line" style="background-color:#774762FF">                'name': record['name'].title(),
+</div><div class="code-line" style="background-color:#774762FF">                'status': 'inactive'
+</div><div class="code-line" style="background-color:#774762FF">            })
+</div><div class="code-line" style="background-color:#774762FF">    return cleaned_data
+</div>
+                    </div>
+                    <div class="code-block">
+                        <h3>Candidate Code</h3>
+                        <div class="code-line">import random
+</div><div class="code-line">import string
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#913914FF">def generate_random_string_v2(length=50):
+</div><div class="code-line" style="background-color:#913914FF">    chars = string.ascii_lowercase + string.ascii_uppercase + string.digits
+</div><div class="code-line" style="background-color:#913914FF">    return ''.join(random.choices(chars, k=length))
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#205F4BFF">def compute_statistics(numbers):
+</div><div class="code-line" style="background-color:#205F4BFF">    total = sum(numbers)
+</div><div class="code-line" style="background-color:#205F4BFF">    count = len(numbers)
+</div><div class="code-line" style="background-color:#205F4BFF">    mean = total / count
+</div><div class="code-line" style="background-color:#205F4BFF">    variance = sum((x - mean) ** 2 for x in numbers) / count
+</div><div class="code-line" style="background-color:#205F4BFF">    return mean, variance
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#F2DD78FF">def transform_data(data):
+</div><div class="code-line" style="background-color:#F2DD78FF">    result = []
+</div><div class="code-line" style="background-color:#F2DD78FF">    for item in data:
+</div><div class="code-line" style="background-color:#F2DD78FF">        if isinstance(item, str):
+</div><div class="code-line" style="background-color:#F2DD78FF">            result.append(item.upper())
+</div><div class="code-line" style="background-color:#F2DD78FF">        elif isinstance(item, int):
+</div><div class="code-line" style="background-color:#F2DD78FF">            result.append(item * 2)
+</div><div class="code-line" style="background-color:#F2DD78FF">        else:
+</div><div class="code-line" style="background-color:#F2DD78FF">            result.append(item)
+</div><div class="code-line" style="background-color:#F2DD78FF">    return result
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#755028FF">def find_substring_occurrences(text, substring):
+</div><div class="code-line" style="background-color:#755028FF">    start = 0
+</div><div class="code-line" style="background-color:#755028FF">    while True:
+</div><div class="code-line" style="background-color:#755028FF">        start = text.find(substring, start)
+</div><div class="code-line" style="background-color:#755028FF">        if start == -1:
+</div><div class="code-line" style="background-color:#755028FF">            break
+</div><div class="code-line" style="background-color:#755028FF">        yield start
+</div><div class="code-line" style="background-color:#755028FF">        start += len(substring)
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#D6BB3BFF">def combine_and_sort_lists(list1, list2):
+</div><div class="code-line" style="background-color:#D6BB3BFF">    merged_list = list1 + list2
+</div><div class="code-line" style="background-color:#D6BB3BFF">    merged_list.sort(reverse=True)
+</div><div class="code-line" style="background-color:#D6BB3BFF">    return merged_list
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#BA6E1DFF">def multiply_matrices(matrix1, matrix2):
+</div><div class="code-line" style="background-color:#BA6E1DFF">    rows1, cols1 = len(matrix1), len(matrix1[0])
+</div><div class="code-line" style="background-color:#BA6E1DFF">    rows2, cols2 = len(matrix2), len(matrix2[0])
+</div><div class="code-line" style="background-color:#BA6E1DFF">    if cols1 != rows2:
+</div><div class="code-line" style="background-color:#BA6E1DFF">        raise ValueError("Incompatible matrices for multiplication")
+</div><div class="code-line" style="background-color:#BA6E1DFF">    
+</div><div class="code-line" style="background-color:#BA6E1DFF">    result = [[0] * cols2 for _ in range(rows1)]
+</div><div class="code-line" style="background-color:#BA6E1DFF">    for i in range(rows1):
+</div><div class="code-line" style="background-color:#BA6E1DFF">        for j in range(cols2):
+</div><div class="code-line" style="background-color:#BA6E1DFF">            for k in range(cols1):
+</div><div class="code-line" style="background-color:#BA6E1DFF">                result[i][j] += matrix1[i][k] * matrix2[k][j]
+</div><div class="code-line" style="background-color:#BA6E1DFF">    return result
+</div><div class="code-line">
+</div><div class="code-line" style="background-color:#774762FF">def clean_and_process_data(data):
+</div><div class="code-line" style="background-color:#774762FF">    cleaned_data = []
+</div><div class="code-line" style="background-color:#774762FF">    for record in data:
+</div><div class="code-line" style="background-color:#774762FF">        if record.get('active'):
+</div><div class="code-line" style="background-color:#774762FF">            cleaned_data.append({
+</div><div class="code-line" style="background-color:#774762FF">                'id': record['id'],
+</div><div class="code-line" style="background-color:#774762FF">                'name': record['name'].title(),
+</div><div class="code-line" style="background-color:#774762FF">                'status': 'active'
+</div><div class="code-line" style="background-color:#774762FF">            })
+</div><div class="code-line" style="background-color:#774762FF">        else:
+</div><div class="code-line" style="background-color:#774762FF">            cleaned_data.append({
+</div><div class="code-line" style="background-color:#774762FF">                'id': record['id'],
+</div><div class="code-line" style="background-color:#774762FF">                'name': record['name'].title(),
+</div><div class="code-line" style="background-color:#774762FF">                'status': 'inactive'
+</div><div class="code-line" style="background-color:#774762FF">            })
+</div><div class="code-line" style="background-color:#774762FF">    return cleaned_data
+</div>
+                    </div>
+                </div>
+            </body>
+            </html>
+        
